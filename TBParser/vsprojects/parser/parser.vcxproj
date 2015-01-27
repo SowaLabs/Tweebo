@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AEBA49D2-DE9B-4100-9A7B-EFF0E33710FD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>parser</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;GOOGLE_GLOG_DLL_DECL=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src\tagger;$(SolutionDir)\src\classifier;$(SolutionDir)\src\util;$(SolutionDir)\deps\AD3-2.0.2;$(SolutionDir)\deps\glog-0.3.2\src\windows;$(SolutionDir)\deps\gflags-2.0\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>util.lib;tagger.lib;classifier.lib;ad3.lib;libgflags-debug.lib;libglog_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;GOOGLE_GLOG_DLL_DECL=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src\tagger;$(SolutionDir)\src\classifier;$(SolutionDir)\src\util;$(SolutionDir)\deps\AD3-2.0.2;$(SolutionDir)\deps\glog-0.3.2\src\windows;$(SolutionDir)\deps\gflags-2.0\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>util.lib;tagger.lib;classifier.lib;ad3.lib;libgflags.lib;libglog_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\parser\DependencyDecoder.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyDictionary.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyFeatures.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyInstance.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyInstanceNumeric.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyOptions.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyPart.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyPipe.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyReader.cpp" />
+    <ClCompile Include="..\..\src\parser\DependencyWriter.cpp" />
+    <ClCompile Include="..\..\src\parser\TurboParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\parser\DependencyDecoder.h" />
+    <ClInclude Include="..\..\src\parser\DependencyDictionary.h" />
+    <ClInclude Include="..\..\src\parser\DependencyFeatures.h" />
+    <ClInclude Include="..\..\src\parser\DependencyFeatureTemplates.h" />
+    <ClInclude Include="..\..\src\parser\DependencyInstance.h" />
+    <ClInclude Include="..\..\src\parser\DependencyInstanceNumeric.h" />
+    <ClInclude Include="..\..\src\parser\DependencyOptions.h" />
+    <ClInclude Include="..\..\src\parser\DependencyPart.h" />
+    <ClInclude Include="..\..\src\parser\DependencyPipe.h" />
+    <ClInclude Include="..\..\src\parser\DependencyReader.h" />
+    <ClInclude Include="..\..\src\parser\DependencyWriter.h" />
+    <ClInclude Include="..\..\src\parser\FactorGrandparentHeadAutomaton.h" />
+    <ClInclude Include="..\..\src\parser\FactorHeadAutomaton.h" />
+    <ClInclude Include="..\..\src\parser\FactorSequence.h" />
+    <ClInclude Include="..\..\src\parser\FactorTree.h" />
+    <ClInclude Include="..\..\src\parser\FactorTrigramHeadAutomaton.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
