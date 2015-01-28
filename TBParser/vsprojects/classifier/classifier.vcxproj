@@ -79,6 +79,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;GOOGLE_GLOG_DLL_DECL=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\src\util;$(SolutionDir)\deps\AD3-2.0.1\ad3;$(SolutionDir)\deps\glog-0.3.2\src\windows;$(SolutionDir)\deps\gflags-2.0\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/D GFLAGS_DLL_DECL= /D GFLAGS_DLL_DECLARE_FLAG= /D GFLAGS_DLL_DEFINE_FLAG= %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -111,6 +112,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;GOOGLE_GLOG_DLL_DECL=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/D GFLAGS_DLL_DECL= /D GFLAGS_DLL_DECLARE_FLAG= /D GFLAGS_DLL_DEFINE_FLAG= %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>$(SolutionDir)\src\util;$(SolutionDir)\deps\AD3-2.0.1\ad3;$(SolutionDir)\deps\glog-0.3.2\src\windows;$(SolutionDir)\deps\gflags-2.0\src\windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

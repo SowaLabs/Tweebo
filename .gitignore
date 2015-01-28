@@ -11,7 +11,9 @@ obj/
 *.pubxml.user
 *.pubxml
 *.sdf
+*.opensdf
 *.scc
+pretrained_models/
 
 *.o
 .deps
